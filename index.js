@@ -139,6 +139,7 @@ async function createTransaction(ev) {
     document.querySelector(`#transaction-${id}`).remove();
     renderTransaction(transaction);
     document.querySelector("#id").value = "";
+    updateBalance()
   } else {
     const response = await fetch("http://localhost:3000/transactions", {
       method: "POST",

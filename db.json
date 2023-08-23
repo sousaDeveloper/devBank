@@ -1,14 +1,19 @@
 {
   "transactions": [
     {
-      "name": "Curso",
-      "amount": -300,
+      "name": "Salario",
+      "amount": 2500,
       "id": 1
     },
     {
-      "name": "Matheus",
+      "name": "Freela",
       "amount": 1200,
       "id": 2
+    },
+    {
+      "name": "Curso",
+      "amount": -350,
+      "id": 3
     }
   ]
 }
