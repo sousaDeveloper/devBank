@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carregando...</title>
+    <link rel="shortcut icon" href="./imagens/favicon.png" type="image/x-icon">
+  </head>
+  <body>
+    <div class="loader"></div>
+    <script>
+      function fadeOutEffect() {
+        var body = document.getElementsByTagName("body")[0];
+        var fadeOut = setInterval(function () {
+          if (!body.style.opacity) {
+            body.style.opacity = 1;
+          }
+          if (body.style.opacity > 0) {
+            body.style.opacity -= 0.1;
+          } else {
+            clearInterval(fadeOut);
+            window.location.href = "../home.html";
+          }
+        }, 200);
+      }
+
+      setTimeout(function () {
+        fadeOutEffect();
+      }, 1500);
+    </script>
+
+    <style>
+      * {
+        background-color: #000;
+      }
+
+      .loader {
+        display: grid;
+        place-content: center;
+        min-height: 90vh;
+      }
+
+      .loader:after {
+        content: "$";
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 40px;
+        font-size: 32px;
+        font-weight: bold;
+        background: #ffd700;
+        color: #daa520;
+        border: 4px double;
+        box-sizing: border-box;
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+        animation: coin-flip 4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+      }
+
+      @keyframes coin-flip {
+        0%,
+        100% {
+          animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+        }
+
+        0% {
+          transform: rotateY(0deg);
+        }
+
+        50% {
+          transform: rotateY(1000deg);
+          animation-timing-function: cubic-bezier(0, 0.1, 0.1, 1);
+        }
+
+        100% {
+          transform: rotateY(2000deg);
+        }
+      }
+    </style>
+  </body>
+</html>

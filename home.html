@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Controle Fincanceiro</title>
+    <link rel="shortcut icon" href="./imagens/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/home.css" />
+    <script src="./index.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  </head>
+  <body class="dark">
+    <header>
+      <h1>Controle Fincanceiro</h1>
+      <label class="switch">
+        <input type="checkbox" />
+        <div class="slider"></div>
+        <div class="slider-card">
+          <div class="slider-card-face slider-card-front"></div>
+          <div class="slider-card-face slider-card-back"></div>
+        </div>
+      </label>
+    </header>
+
+    <main>
+      <form>
+        <h2 id="newFinance">Nova Finança</h2>
+        <input type="hidden" id="id" name="id" />
+        <label for="name">Nome:</label>
+        <div class="textInputWrapper">
+          <input placeholder="Nome da finança" type="text" class="textInput" id="name" name="name" required />
+        </div>
+        <label for="amount">Valor:</label>
+        <div class="textInputWrapper">
+          <input placeholder="Valor da finança" type="number" max="100000" class="textInput" id="amount" name="amount" required />
+        </div>
+        <br /><br />
+        <button id="btnSave">Salvar</button>
+      </form>
+      <div>
+        <h2>Saldo: <span id="balance"></span></h2>
+        <h2>Histórico de Finanças:</h2>
+        <section id="transactions"></section>
+      </div>
+    </main>
+  </body>
+</html>

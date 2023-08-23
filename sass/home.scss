@@ -1,0 +1,480 @@
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin buttons-styles($position, $display, $padding, $width, $height, $border, $color, $cursor) {
+  position: $position;
+  display: $display;
+  padding: $padding;
+  width: $width;
+  height: $height;
+  border: $border;
+  color: $color;
+  cursor: $cursor;
+}
+
+body {
+  transition: background-color 0.6s ease;
+}
+
+*::selection:not(h1) {
+  background: #796450;
+}
+
+body::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #796450;
+  border-radius: 0.2rem;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #3f1a00;
+  border-radius: 0.2rem;
+}
+
+.dark {
+  background-color: #1a0b00;
+  color: #fff;
+}
+
+.light {
+  background-color: #d6b698;
+  color: #000;
+}
+
+main {
+  display: flex;
+  gap: 2rem;
+  margin: 0 2rem;
+}
+
+main > form {
+  flex: 1;
+}
+
+main > div {
+  flex: 3;
+}
+
+h1 {
+  display: inline-block;
+  background: linear-gradient(to right, #eb8353, #f5d2a4, #ffebd3);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem 2rem 0;
+}
+
+.switch {
+  --circle-dim: 1.2em;
+  font-size: 1.063rem;
+  position: relative;
+  display: inline-block;
+  width: 3.3em;
+  height: 1.8em;
+  margin: 0;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #d6b698;
+  transition: 0.4s;
+  border-radius: 1.875rem;
+}
+
+.slider-card {
+  position: absolute;
+  content: "";
+  height: var(--circle-dim);
+  width: var(--circle-dim);
+  border-radius: 1.25rem;
+  left: 0.3em;
+  bottom: 0.3em;
+  transition: 0.4s;
+  pointer-events: none;
+}
+
+.slider-card-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  perspective: 62.5rem;
+  border-radius: 50%;
+  transition: 0.4s transform;
+}
+
+.slider-card-front {
+  background-color: #1a0b00;
+}
+
+.slider-card-back {
+  background-color: #d6b698;
+  transform: rotateY(180deg);
+}
+
+input:checked ~ .slider-card .slider-card-back {
+  transform: rotateY(0);
+}
+
+input:checked ~ .slider-card .slider-card-front {
+  transform: rotateY(-180deg);
+}
+
+input:checked ~ .slider-card {
+  transform: translateX(1.5em);
+}
+
+input:checked ~ .slider {
+  background-color: #1a0b00;
+}
+
+h2 {
+  background-color: #39353b;
+  border-radius: 0.5rem;
+  margin-top: 2rem;
+  padding: 1rem 1.5rem;
+}
+
+#newFinance {
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.textInputWrapper {
+  position: relative;
+  width: 100%;
+  --accent-color: #eb8353;
+}
+
+.textInputWrapper:before {
+  transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+}
+
+.textInputWrapper:before,
+.textInputWrapper:after {
+  content: "";
+  left: 0;
+  right: 0;
+  position: absolute;
+  pointer-events: none;
+  bottom: -1px;
+  z-index: 4;
+  width: 100%;
+}
+
+.textInputWrapper:focus-within:before {
+  border-bottom: 1px solid var(--accent-color);
+}
+
+.textInputWrapper:before {
+  transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+}
+
+.textInputWrapper:focus-within:before {
+  border-bottom: 1px solid var(--accent-color);
+  transform: scaleX(1);
+}
+
+.textInputWrapper:focus-within:after {
+  border-bottom: 2px solid var(--accent-color);
+  transform: scaleX(1);
+}
+
+.textInputWrapper:after {
+  content: "";
+  transform: scaleX(0);
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  will-change: transform;
+  border-bottom: 2px solid var(--accent-color);
+  border-bottom-color: var(--accent-color);
+}
+
+.textInput::placeholder {
+  transition: opacity 250ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  opacity: 1;
+  user-select: none;
+  color: rgba(255, 255, 255, 0.582);
+}
+
+.textInputWrapper .textInput {
+  border-radius: 5px 5px 0px 0px;
+  box-shadow: 0px 2px 5px rgb(35 35 35 / 30%);
+  max-height: 4rem;
+  background-color: #252525;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 200ms;
+  transition-property: background-color;
+  color: #e8e8e8;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.75rem;
+  width: 100%;
+  border: none;
+}
+
+.textInputWrapper .textInput:focus,
+.textInputWrapper .textInput:active {
+  outline: none;
+}
+
+.textInputWrapper:focus-within .textInput,
+.textInputWrapper .textInput:focus,
+.textInputWrapper .textInput:active {
+  background-color: #353535;
+}
+
+.textInputWrapper:focus-within .textInput::placeholder {
+  opacity: 0;
+}
+
+.transactions {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.transaction {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #39353b;
+  margin-bottom: 1rem;
+  padding: 0.7rem 0 0.7rem 0;
+  animation: slideInDown;
+  animation-duration: 0.35s;
+}
+
+.transaction:first-child {
+  margin-top: 1rem;
+}
+
+.transaction > span {
+  flex: 1;
+}
+
+.transaction-amount {
+  margin-right: 4rem;
+  text-align: end;
+}
+
+.transaction-amount.credit,
+.spanCredit {
+  color: #6bf394;
+}
+
+.transaction-amount.debit,
+.spanDebit {
+  color: #f64348;
+}
+
+#btnSave {
+  @include buttons-styles(relative, inline-block, 0.5rem, 100%, none, 1px solid #4f4f4f, #000, pointer);
+  margin: 0;
+  border-radius: 0.25rem;
+  transition: all 0.2s ease-in;
+  overflow: hidden;
+  font-size: 1rem;
+  z-index: 1;
+  background-color: #eb8353;
+}
+
+#btnSave:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.25);
+  top: 100%;
+  width: 140%;
+  height: 180%;
+  background-color: #8a4c30;
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+
+#btnSave:after {
+  content: "";
+  position: absolute;
+  left: 55%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.45);
+  top: 180%;
+  width: 160%;
+  height: 190%;
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+
+#btnSave:hover {
+  color: #fff;
+}
+
+#btnSave:hover:before {
+  top: -35%;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+#btnSave:hover:after {
+  top: -45%;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+.edit-btn {
+  @include buttons-styles(relative, flex, 0rem 1.25rem, 6.2rem, 2.5rem, none, #fff, pointer);
+  align-items: center;
+  margin-right: 0.5rem;
+  justify-content: flex-start;
+  padding: 0rem 1.25rem;
+  background-color: rgb(199, 80, 80);
+  font-weight: 500;
+  border-radius: 0.625rem;
+  transition-duration: 0.3s;
+
+  &:hover {
+    color: transparent;
+    box-shadow: 0.313rem 0.313rem 0rem rgb(190, 50, 50);
+  }
+}
+
+.svg {
+  width: 0.813rem;
+  position: absolute;
+  right: 0;
+  margin-right: 1.25rem;
+  fill: #fff;
+  transition-duration: 0.3s;
+}
+
+.edit-btn:hover svg,
+.delete-btn:hover svg {
+  right: 43%;
+  width: 0.9rem;
+  margin: 0;
+  padding: 0;
+  border: none;
+  transition-duration: 0.3s;
+}
+
+.edit-btn:active {
+  transform: translate(0.188rem, 0.188rem);
+  transition-duration: 0.3s;
+  box-shadow: 0.125rem 0.125rem 0rem rgb(190, 50, 50);
+}
+
+.delete-btn {
+  @include buttons-styles(relative, flex, 0rem 1.25rem, 6.2rem, 2.5rem, none, #fff, pointer);
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0rem 1.25rem;
+  background-color: rgb(255, 0, 0);
+  font-weight: 500;
+  border-radius: 0.625rem;
+  transition-duration: 0.3s;
+
+  &:hover {
+    color: transparent;
+    box-shadow: 0.313rem 0.313rem 0rem rgb(104, 24, 24);
+  }
+}
+
+.delete-btn:active {
+  transform: translate(0.188rem, 0.188rem);
+  transition-duration: 0.3s;
+  box-shadow: 0.125rem 0.125rem 0rem rgb(104, 24, 24);
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 531px) {
+  .edit-btn,
+  .delete-btn {
+    width: 5.9rem;
+    font-size: 0.8rem;
+  }
+  .transaction-amount {
+    margin-right: 3rem;
+    text-align: end;
+  }
+}
+
+@media screen and (max-width: 505px) {
+  .transaction-amount {
+    margin-right: 2rem;
+    font-size: 0.92rem;
+  }
+  .svg {
+    width: 0.7rem;
+    margin-left: 0.3rem;
+  }
+  .edit-btn:hover svg,
+  .delete-btn:hover svg {
+    right: 43%;
+    width: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 471px) {
+  .edit-btn,
+  .delete-btn {
+    width: 5rem;
+    padding: 0 1rem;
+    font-size: 0.8rem;
+  }
+  .transaction-amount {
+    margin-right: 2rem;
+    text-align: end;
+  }
+  .svg {
+    margin-right: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 445px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+
+}
+
+@media screen and (max-width: 365px) {
+  h1 {
+    font-size: 1.2rem;
+  }
+}
