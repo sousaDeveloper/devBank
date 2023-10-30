@@ -43,10 +43,10 @@ json-server --watch db.json
 2. Contribuição
 3. Contribuições são bem-vindas! Sinta-se à vontade para abrir problemas (issues) ou enviar solicitações de pull (pull requests) para melhorar o projeto.
 
-- Licença
+- Licença<br>
 Este projeto é licenciado sob a Licença MIT.
 
-- Contato
+- Contato<br>
 Se você tiver alguma dúvida ou sugestão, sinta-se à vontade para entrar em contato comigo em devlpsousa@gmail.com.
 
 Aproveite o aplicativo do Banco Fictício! 🚀
