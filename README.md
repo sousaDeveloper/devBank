@@ -20,7 +20,7 @@ Você pode acessar uma demonstração do aplicativo [aqui](https://www.linkedin.
 
 1. Clone este repositório:
 ```
-git clone https://github.com/seuusuario/seu-repositorio.git
+git clone https://github.com/sousaDeveloper/Projeto-Financas.git
 ```
 
 2. Navegue até a pasta do projeto:
