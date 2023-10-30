@@ -39,9 +39,9 @@ json-server --watch db.json
 
 - Uso:
 
-• Comece a usar o aplicativo para realizar organizar seus gastos e ganhos.
-• Contribuição
-• Contribuições são bem-vindas! Sinta-se à vontade para abrir problemas (issues) ou enviar solicitações de pull (pull requests) para melhorar o projeto.
+1. Comece a usar o aplicativo para realizar organizar seus gastos e ganhos.
+2. Contribuição
+3. Contribuições são bem-vindas! Sinta-se à vontade para abrir problemas (issues) ou enviar solicitações de pull (pull requests) para melhorar o projeto.
 
 - Licença
 Este projeto é licenciado sob a Licença MIT.
