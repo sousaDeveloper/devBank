@@ -1,6 +1,6 @@
-# Banco Fictício
+# Controle Financeiro
 
-Este é um projeto de um banco fictício, desenvolvido como parte do meu aprendizado. Ele foi criado usando HTML, CSS, JavaScript, SCSS e Git. Além disso, o aplicativo utiliza uma API simulada por meio do json-server para demonstrar o funcionamento básico de um banco de dados fictício, incluindo o CRUD (Create, Read, Update, Delete), que permite a criação, leitura, atualização e exclusão de dados do banco de dados.
+Este é um projeto de um banco fictício, desenvolvido como parte do meu aprendizado. Ele foi criado usando HTML, CSS, JavaScript, SCSS e Git. Além disso, o aplicativo utiliza uma API simulada por meio do json-server para demonstrar o funcionamento básico de um banco de dados, incluindo o CRUD (Create, Read, Update, Delete), que permite a criação, leitura, atualização e exclusão de dados do banco de dados.
 
 ## Demonstração
 
