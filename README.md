@@ -12,10 +12,6 @@ Você pode acessar uma demonstração do aplicativo [aqui](https://www.linkedin.
 - Histórico de transações
 - E muito mais!
 
-## Requisitos
-
-- Um navegador da web moderno
-
 ## Instalação
 
 1. Clone este repositório:
@@ -41,7 +37,7 @@ json-server --watch db.json
 
 1. Comece a usar o aplicativo para realizar organizar seus gastos e ganhos.
 2. Contribuição
-3. Contribuições são bem-vindas! Sinta-se à vontade para abrir problemas (issues) ou enviar solicitações de pull (pull requests) para melhorar o projeto.
+3. Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar solicitações de PR's para melhorar o projeto.
 
 - Licença<br>
 Este projeto é licenciado sob a Licença MIT.
